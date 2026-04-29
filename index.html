@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyStore — спортивный магазин</title>
+  <meta name="description" content="SkyStore — бутылки, эспандеры, рюкзаки, перчатки и коврики для тренировок. Быстрая доставка по России.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230EA5E9'/%3E%3Cpath d='M16 5L9 12l7 2.5 7-2.5L16 5z' fill='white' opacity='.95'/%3E%3Cpath d='M9 12l7 15 7-15-7 2.5L9 12z' fill='white' opacity='.75'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 20 20" fill="none">
+              <path d="M10 3L5 9l5 1.8 5-1.8L10 3z" fill="white" opacity=".95"/>
+              <path d="M5 9l5 10 5-10-5 1.8L5 9z" fill="white" opacity=".75"/>
+            </svg>
+          </div>
+          SkyStore
+        </a>
+        <nav class="nav">
+          <a href="index.html"    class="nav-link">Главная</a>
+          <a href="catalog.html"  class="nav-link">Каталог</a>
+          <a href="about.html"    class="nav-link">О нас</a>
+          <a href="contacts.html" class="nav-link">Контакты</a>
+        </nav>
+        <div class="header-actions">
+          <a href="cart.html" class="cart-btn">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            Корзина
+            <span class="cart-count" style="display:none">0</span>
+          </a>
+          <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="index.html"    class="nav-link">Главная</a>
+    <a href="catalog.html"  class="nav-link">Каталог</a>
+    <a href="about.html"    class="nav-link">О нас</a>
+    <a href="contacts.html" class="nav-link">Контакты</a>
+    <a href="cart.html"     class="nav-link">Корзина</a>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-bg-circle hero-bg-circle-1"></div>
+        <div class="hero-bg-circle hero-bg-circle-2"></div>
+      </div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-tag">
+              Официальный магазин
+            </div>
+            <h1>Аксессуары для спорта и активного дня</h1>
+            <p class="hero-desc">SkyStore — магазин спортивных бутылок, эспандеров, рюкзаков и аксессуаров для тех, кто тренируется каждый день. Доставка по России за 1–3 дня.</p>
+            <div class="hero-actions">
+              <a href="catalog.html" class="btn btn-primary btn-lg">
+                В каталог
+                <span data-icon="arrow"></span>
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <strong><span data-count="4800" data-suffix="+">0</span></strong>
+                <span>клиентов</span>
+              </div>
+              <div class="hero-stat">
+                <strong><span data-count="18" data-suffix="+">0</span></strong>
+                <span>товаров</span>
+              </div>
+              <div class="hero-stat">
+                <strong><span data-count="98" data-suffix="%">0</span></strong>
+                <span>довольных клиентов</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <video
+              class="hero-video"
+              src="assets/video/hero-new.mp4"
+              preload="auto"
+              muted
+              playsinline
+              webkit-playsinline
+              disablepictureinpicture
+              tabindex="-1"></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <div class="section-header" data-reveal="up">
+          <div class="eyebrow">Ассортимент</div>
+          <h2>Категории товаров</h2>
+          <p>Всё необходимое для тренировок в одном месте</p>
+        </div>
+        <div class="cat-grid">
+          <a href="catalog.html?cat=bottles" class="cat-card" data-reveal="up" data-delay="100">
+            <div class="cat-card-img cat-card-img-product cat-card-img-bottle">
+              <img src="images/blue.png" alt="Бутылки для спорта">
+            </div>
+            <div class="cat-card-body">
+              <h3>Бутылки</h3>
+              <p>Спортивные алюминиевые</p>
+            </div>
+          </a>
+          <a href="catalog.html?cat=expanders" class="cat-card" data-reveal="up" data-delay="200">
+            <div class="cat-card-img cat-card-img-product">
+              <img src="images/espander%20red.png" alt="Эспандеры и ленты">
+            </div>
+            <div class="cat-card-body">
+              <h3>Эспандеры</h3>
+              <p>Латексные петли SkyFlex</p>
+            </div>
+          </a>
+          <a href="catalog.html?cat=backpacks" class="cat-card" data-reveal="up" data-delay="300">
+            <div class="cat-card-img cat-card-img-product">
+              <img src="images/back%20blue.png" alt="Спортивные рюкзаки">
+            </div>
+            <div class="cat-card-body">
+              <h3>Рюкзаки</h3>
+              <p>Для тренировок и города</p>
+            </div>
+          </a>
+          <a href="catalog.html?cat=gloves" class="cat-card" data-reveal="up" data-delay="100">
+            <div class="cat-card-img cat-card-img-product">
+              <img src="images/per%20blue.png" alt="Перчатки для фитнеса">
+            </div>
+            <div class="cat-card-body">
+              <h3>Перчатки</h3>
+              <p>Тренировочные SkyGrip</p>
+            </div>
+          </a>
+          <a href="catalog.html?cat=mats" class="cat-card" data-reveal="up" data-delay="200">
+            <div class="cat-card-img cat-card-img-product">
+              <img src="images/cover%20green.png" alt="Коврики для йоги">
+            </div>
+            <div class="cat-card-body">
+              <h3>Коврики</h3>
+              <p>Для йоги, фитнеса и пилатеса</p>
+            </div>
+          </a>
+          <a href="catalog.html?cat=accessories" class="cat-card" data-reveal="up" data-delay="300">
+            <div class="cat-card-img cat-card-img-product">
+              <img src="images/type%20yellow.png" alt="Аксессуары для спорта">
+            </div>
+            <div class="cat-card-body">
+              <h3>Аксессуары</h3>
+              <p>Скакалки, бинты, тейпы, сумки</p>
+            </div>
+          </a>
+        </div>
+        <div style="text-align:center;margin-top:48px" data-reveal="up">
+          <a href="catalog.html" class="btn btn-outline btn-lg">
+            Весь каталог <span data-icon="arrow"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <div class="section-header" data-reveal="up">
+          <div class="eyebrow">Преимущества</div>
+          <h2>Почему выбирают SkyStore</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card" data-reveal="up" data-delay="100">
+            <div class="feature-icon" style="background:#e0f2fe;color:#0284c7"><span data-icon="truck"></span></div>
+            <h4>Быстрая доставка</h4>
+            <p>Отправляем в течение 24 ч. По России 1–3 дня. От 3 000 ₽ — бесплатно.</p>
+          </div>
+          <div class="feature-card" data-reveal="up" data-delay="200">
+            <div class="feature-icon" style="background:#dcfce7;color:#15803d"><span data-icon="shield"></span></div>
+            <h4>Гарантия качества</h4>
+            <p>Только проверенные производители. Официальная гарантия на каждый товар.</p>
+          </div>
+          <div class="feature-card" data-reveal="up" data-delay="300">
+            <div class="feature-icon" style="background:#fef3c7;color:#b45309"><span data-icon="credit"></span></div>
+            <h4>Заказ без регистрации</h4>
+            <p>Оплата при получении или онлайн. Никаких лишних шагов — просто заказ.</p>
+          </div>
+          <div class="feature-card" data-reveal="up" data-delay="400">
+            <div class="feature-icon" style="background:#fce7f3;color:#be185d"><span data-icon="headset"></span></div>
+            <h4>Поддержка 7 дней</h4>
+            <p>Ответим на любой вопрос каждый день с 9:00 до 21:00.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section cta-light">
+      <div class="container">
+        <div data-reveal="scale">
+          <h2>Подберите экипировку под свои тренировки</h2>
+          <p>Выберите аксессуары, которые помогут тренироваться удобно и регулярно</p>
+          <a href="catalog.html" class="btn btn-lg btn-primary" style="margin-top:32px">
+            Смотреть каталог <span data-icon="arrow"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 3L5 9l5 1.8 5-1.8L10 3z" fill="white" opacity=".95"/><path d="M5 9l5 10 5-10-5 1.8L5 9z" fill="white" opacity=".75"/></svg></div>
+SkyStore
+          </a>
+          <p style="margin-top:14px">Качественное спортивное снаряжение для тех, кто тренируется всерьёз.</p>
+          <div class="socials" style="margin-top:16px">
+            <a href="#" class="social-link" aria-label="VK"><svg viewBox="0 0 24 24" fill="white" width="15" height="15"><path d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.6A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64a.73.73 0 0 1-1.272.503A21.54 21.54 0 0 1 6.197 7.41a.693.693 0 0 0-.63-.403h-2.99a.508.508 0 0 0-.48.635C3.093 10.148 6 17.5 12.58 17.5h1.169a.474.474 0 0 0 .474-.474v-1.571a.576.576 0 0 1 .527-.577c.793-.05 2.6.744 3.467 2.363a.573.573 0 0 0 .817.259h2.739a.493.493 0 0 0 .41-.758c-.944-1.36-3.244-3.356-3.244-3.356s2.946-3.891 3.29-5.209A.582.582 0 0 0 21.547 7z"/></svg></a>
+            <a href="#" class="social-link" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="white" width="15" height="15"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.012 9.488c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.875.733z"/></svg></a>
+            <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" width="15" height="15"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Каталог</h4>
+          <div class="footer-links">
+            <a href="catalog.html">Все товары</a>
+            <a href="catalog.html?cat=bottles">Бутылки</a>
+            <a href="catalog.html?cat=expanders">Эспандеры</a>
+            <a href="catalog.html?cat=backpacks">Рюкзаки</a>
+            <a href="catalog.html?cat=gloves">Перчатки</a>
+            <a href="catalog.html?cat=mats">Коврики</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Покупателям</h4>
+          <div class="footer-links">
+            <a href="cart.html">Корзина</a>
+            <a href="checkout.html">Оформление заказа</a>
+            <a href="about.html">Доставка и оплата</a>
+            <a href="about.html">Возврат</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <div class="footer-contact-item"><span data-icon="phone"></span><span>+7 (800) 123-45-67</span></div>
+          <div class="footer-contact-item"><span data-icon="mail"></span><span>hello@skystore.ru</span></div>
+          <div class="footer-contact-item"><span data-icon="pin"></span><span>Москва, Спортивная ул., 12</span></div>
+        </div>
+      </div>
+        <div class="footer-bottom">
+         <p>&copy; 2026 SkyStore. Все права защищены.</p>
+        <div class="socials" style="gap:16px">
+          <a href="about.html" class="footer-links" style="font-size:.82rem;color:rgba(255,255,255,.35)">О нас</a>
+          <a href="contacts.html" style="font-size:.82rem;color:rgba(255,255,255,.35)">Контакты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

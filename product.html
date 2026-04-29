@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товар — SkyStore</title>
+  <meta name="description" content="Подробное описание товара в магазине SkyStore. Характеристики, фото, отзывы.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230EA5E9'/%3E%3Cpath d='M16 5L9 12l7 2.5 7-2.5L16 5z' fill='white' opacity='.95'/%3E%3Cpath d='M9 12l7 15 7-15-7 2.5L9 12z' fill='white' opacity='.75'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="product">
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L4 8l6 2 6-2-6-6z" fill="white" opacity=".9"/><path d="M4 8l6 10 6-10-6 2-6-2z" fill="white" opacity=".7"/></svg></div>
+          SkyStore
+        </a>
+        <nav class="nav">
+          <a href="index.html"    class="nav-link">Главная</a>
+          <a href="catalog.html"  class="nav-link">Каталог</a>
+          <a href="about.html"    class="nav-link">О нас</a>
+          <a href="contacts.html" class="nav-link">Контакты</a>
+        </nav>
+        <div class="header-actions">
+          <a href="cart.html" class="cart-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            Корзина <span class="cart-count" style="display:none">0</span>
+          </a>
+          <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="index.html"    class="nav-link">Главная</a>
+    <a href="catalog.html"  class="nav-link">Каталог</a>
+    <a href="about.html"    class="nav-link">О нас</a>
+    <a href="contacts.html" class="nav-link">Контакты</a>
+    <a href="cart.html"     class="nav-link">Корзина</a>
+  </nav>
+
+  <main class="page-content">
+    <div class="container product-page">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Путь">
+        <a href="index.html">Главная</a>
+        <span>›</span>
+        <a href="catalog.html">Каталог</a>
+        <span>›</span>
+        <a href="catalog.html" id="breadcrumb-cat">Категория</a>
+        <span>›</span>
+        <span id="breadcrumb-name">Товар</span>
+      </nav>
+
+      <!-- Product detail -->
+      <div class="product-detail-grid">
+
+        <!-- Gallery -->
+        <div class="product-gallery" data-reveal="right">
+          <div class="product-main-image img-sky" id="prod-image">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".25"><path d="M9 2h6v3H9zM8 5h8l1 3v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V8l1-3z"/><path d="M7 10h10"/></svg>
+          </div>
+          <div class="product-thumbs" id="prod-thumbs">
+            <!-- JS fills -->
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="product-info" data-reveal="left">
+
+          <div class="product-top-meta">
+            <span class="badge badge-hit" id="prod-badge">Хит</span>
+            <span class="tag">В наличии</span>
+          </div>
+
+          <div class="product-category" style="font-size:.9rem;margin-bottom:8px" id="prod-category">Бутылки</div>
+          <h1 id="prod-name">HydroMax Pro 1L</h1>
+
+          <div class="product-rating" style="margin:12px 0 0">
+            <span class="stars" id="prod-stars"></span>
+            <span id="prod-rating-val">4.8</span>
+            <span id="prod-reviews">124 отзыва</span>
+          </div>
+
+          <div class="product-info-price" style="margin-top:var(--gap-lg)">
+            <span class="price-current" id="prod-price">1 490 ₽</span>
+            <span class="price-old" id="prod-old-price"></span>
+          </div>
+
+          <p class="product-description" id="prod-description">
+            Профессиональная спортивная бутылка с двойными вакуумными стенками.
+          </p>
+
+          <!-- Characteristics -->
+          <div class="product-characteristics">
+            <h3>Характеристики</h3>
+            <div class="char-list" id="prod-chars">
+              <!-- JS fills -->
+            </div>
+          </div>
+
+          <!-- Color selector -->
+          <div class="color-selector">
+            <label>Цвет:</label>
+            <div class="color-options" id="prod-colors">
+              <!-- JS fills -->
+            </div>
+          </div>
+
+          <!-- Add to cart -->
+          <div class="add-to-cart-section">
+            <div class="qty-control">
+              <button class="qty-btn" id="qty-minus">−</button>
+              <span class="qty-input" id="prod-qty">1</span>
+              <button class="qty-btn" id="qty-plus">+</button>
+            </div>
+            <button class="btn btn-primary btn-lg" id="add-to-cart-btn" style="flex:1">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              Добавить в корзину
+            </button>
+          </div>
+
+          <!-- Guarantees -->
+          <div class="product-guarantees">
+            <div class="guarantee-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span>Доставка 1–3 дня</span>
+            </div>
+            <div class="guarantee-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.5"/></svg>
+              <span>Возврат 14 дней</span>
+            </div>
+            <div class="guarantee-item">
+              <span></span>
+              <span>Гарантия</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Related products -->
+      <div class="section-sm" style="margin-top:var(--gap-3xl);border-top:1px solid var(--c-border)">
+        <div class="section-header" style="margin-bottom:var(--gap-xl)" data-reveal="up">
+          <div class="eyebrow">Рекомендуем</div>
+          <h2>Похожие товары</h2>
+        </div>
+        <div class="products-grid" id="related-grid">
+          <!-- JS fills -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L4 8l6 2 6-2-6-6z" fill="white" opacity=".9"/><path d="M4 8l6 10 6-10-6 2-6-2z" fill="white" opacity=".7"/></svg></div>
+            SkyStore
+          </a>
+          <p style="margin-top:var(--gap-md)">Качественные спортивные аксессуары для ваших тренировок.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Каталог</h4>
+          <div class="footer-links">
+            <a href="catalog.html">Все товары</a>
+            <a href="catalog.html?cat=bottles">Бутылки</a>
+            <a href="catalog.html?cat=expanders">Эспандеры</a>
+            <a href="catalog.html?cat=accessories">Аксессуары</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Покупателям</h4>
+          <div class="footer-links">
+            <a href="cart.html">Корзина</a>
+            <a href="checkout.html">Оформление заказа</a>
+            <a href="about.html">Доставка и оплата</a>
+            <a href="contacts.html">Связаться с нами</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg><span>+7 (800) 123-45-67</span></div>
+          <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>hello@skystore.ru</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 SkyStore. Все права защищены.</p>
+        <span style="font-size:.85rem;color:rgba(255,255,255,.4)">Сделано для спортсменов</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

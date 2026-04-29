@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформление заказа — SkyStore</title>
+  <meta name="description" content="Оформите заказ в SkyStore. Заполните данные доставки и подтвердите покупку.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230EA5E9'/%3E%3Cpath d='M16 5L9 12l7 2.5 7-2.5L16 5z' fill='white' opacity='.95'/%3E%3Cpath d='M9 12l7 15 7-15-7 2.5L9 12z' fill='white' opacity='.75'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L4 8l6 2 6-2-6-6z" fill="white" opacity=".9"/><path d="M4 8l6 10 6-10-6 2-6-2z" fill="white" opacity=".7"/></svg></div>
+          SkyStore
+        </a>
+        <nav class="nav">
+          <a href="index.html"    class="nav-link">Главная</a>
+          <a href="catalog.html"  class="nav-link">Каталог</a>
+          <a href="about.html"    class="nav-link">О нас</a>
+          <a href="contacts.html" class="nav-link">Контакты</a>
+        </nav>
+        <div class="header-actions">
+          <a href="cart.html" class="cart-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            Корзина <span class="cart-count" style="display:none">0</span>
+          </a>
+          <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="index.html"    class="nav-link">Главная</a>
+    <a href="catalog.html"  class="nav-link">Каталог</a>
+    <a href="about.html"    class="nav-link">О нас</a>
+    <a href="contacts.html" class="nav-link">Контакты</a>
+    <a href="cart.html"     class="nav-link">Корзина</a>
+  </nav>
+
+  <main class="page-content">
+    <div class="page-title-bar">
+      <div class="container">
+        <!-- Steps -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:.85rem">
+          <a href="cart.html" style="color:var(--c-text-muted)">Корзина</a>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--c-text-muted)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          <span style="color:var(--c-primary);font-weight:600">Оформление</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--c-text-muted)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          <span style="color:var(--c-text-muted)">Подтверждение</span>
+        </div>
+        <h1>Оформление заказа</h1>
+        <p>Заполните данные — регистрация не требуется</p>
+      </div>
+    </div>
+
+    <div class="container checkout-page">
+      <form id="checkout-form" novalidate>
+        <div class="checkout-layout">
+
+          <!-- Left: form -->
+          <div>
+
+            <!-- Contact info -->
+            <div class="checkout-form-card">
+              <h3>
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--c-primary);color:white;border-radius:50%;font-size:.8rem;font-weight:700;margin-right:10px">1</span>
+                Контактные данные
+              </h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="name">Имя *</label>
+                  <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                  <span class="form-error" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Телефон *</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
+                  <span class="form-error" id="phone-error"></span>
+                </div>
+                <div class="form-group full">
+                  <label for="email">Email (необязательно)</label>
+                  <input type="email" id="email" name="email" placeholder="ivan@example.com">
+                </div>
+              </div>
+            </div>
+
+            <!-- Delivery -->
+            <div class="checkout-form-card">
+              <h3>
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--c-primary);color:white;border-radius:50%;font-size:.8rem;font-weight:700;margin-right:10px">2</span>
+                Способ доставки
+              </h3>
+              <div class="delivery-options">
+                <div class="delivery-option selected" data-delivery="standard">
+                  <input type="radio" name="delivery" value="standard" checked>
+                  <div class="delivery-radio"></div>
+                  <div class="delivery-option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+                  <div class="delivery-option-info">
+                    <strong>Стандартная доставка</strong>
+                    <span>2–4 рабочих дня</span>
+                  </div>
+                  <div class="delivery-option-price">290 ₽</div>
+                </div>
+                <div class="delivery-option" data-delivery="express">
+                  <input type="radio" name="delivery" value="express">
+                  <div class="delivery-radio"></div>
+                  <div class="delivery-option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                  <div class="delivery-option-info">
+                    <strong>Экспресс-доставка</strong>
+                    <span>На следующий день</span>
+                  </div>
+                  <div class="delivery-option-price">490 ₽</div>
+                </div>
+                <div class="delivery-option" data-delivery="pickup">
+                  <input type="radio" name="delivery" value="pickup">
+                  <div class="delivery-radio"></div>
+                  <div class="delivery-option-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                  <div class="delivery-option-info">
+                    <strong>Самовывоз</strong>
+                    <span>Москва, Спортивная ул., 12</span>
+                  </div>
+                  <div class="delivery-option-price" style="color:var(--c-success)">Бесплатно</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="checkout-form-card" id="address-card">
+              <h3>
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--c-primary);color:white;border-radius:50%;font-size:.8rem;font-weight:700;margin-right:10px">3</span>
+                Адрес доставки
+              </h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="city">Город *</label>
+                  <input type="text" id="city" name="city" placeholder="Москва" required>
+                  <span class="form-error" id="city-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="index">Индекс *</label>
+                  <input type="text" id="index" name="index" placeholder="123456" required>
+                  <span class="form-error" id="index-error"></span>
+                </div>
+                <div class="form-group full">
+                  <label for="address">Улица, дом, квартира *</label>
+                  <input type="text" id="address" name="address" placeholder="ул. Ленина, д. 1, кв. 42" required>
+                  <span class="form-error" id="address-error"></span>
+                </div>
+                <div class="form-group full">
+                  <label for="comment">Комментарий к заказу</label>
+                  <textarea id="comment" name="comment" placeholder="Пожелания по доставке, время звонка и т.д."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="checkout-form-card">
+              <h3>
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--c-primary);color:white;border-radius:50%;font-size:.8rem;font-weight:700;margin-right:10px">4</span>
+                Способ оплаты
+              </h3>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <label style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--c-primary);border-radius:var(--r-lg);background:var(--c-primary-pale);cursor:pointer">
+                  <input type="radio" name="payment" value="cash" checked style="accent-color:var(--c-primary)">
+                  <span style="font-size:1.3rem;display:inline-flex"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+                  <div>
+                    <div style="font-weight:600;font-size:.9rem">Оплата при получении</div>
+                    <div style="font-size:.78rem;color:var(--c-text-muted)">Наличными или картой курьеру</div>
+                  </div>
+                </label>
+                <label style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--c-border);border-radius:var(--r-lg);cursor:pointer">
+                  <input type="radio" name="payment" value="card" style="accent-color:var(--c-primary)">
+                  <span data-icon="credit"></span>
+                  <div>
+                    <div style="font-weight:600;font-size:.9rem">Картой онлайн</div>
+                    <div style="font-size:.78rem;color:var(--c-text-muted)">Visa, Mastercard, МИР</div>
+                  </div>
+                </label>
+                <label style="display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--c-border);border-radius:var(--r-lg);cursor:pointer">
+                  <input type="radio" name="payment" value="sbp" style="accent-color:var(--c-primary)">
+                  <span style="display:inline-flex"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span>
+                  <div>
+                    <div style="font-weight:600;font-size:.9rem">СБП (быстрые платежи)</div>
+                    <div style="font-size:.78rem;color:var(--c-text-muted)">Без комиссии</div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: order summary -->
+          <div>
+            <div class="cart-summary" style="position:sticky;top:calc(var(--header-h) + 20px)">
+              <h3>Ваш заказ</h3>
+
+              <div id="checkout-items" style="margin-bottom:var(--gap-lg);max-height:300px;overflow-y:auto">
+                <!-- JS fills -->
+              </div>
+
+              <div class="summary-divider"></div>
+
+              <div class="summary-rows" style="margin-top:var(--gap-md)">
+                <div class="summary-row">
+                  <span class="label">Товары</span>
+                  <span class="value" id="summary-subtotal">0 ₽</span>
+                </div>
+                <div class="summary-row">
+                  <span class="label">Доставка</span>
+                  <span class="value" id="summary-delivery">290 ₽</span>
+                </div>
+              </div>
+
+              <div class="summary-divider"></div>
+
+              <div class="summary-total">
+                <span class="label">К оплате</span>
+                <span class="value" id="summary-total">0 ₽</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:4px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Подтвердить заказ
+              </button>
+
+              <p style="font-size:.75rem;color:var(--c-text-muted);text-align:center;margin-top:var(--gap-md);line-height:1.5">
+                Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных
+              </p>
+
+              <div style="display:flex;align-items:center;justify-content:center;gap:var(--gap-md);margin-top:var(--gap-md);padding-top:var(--gap-md);border-top:1px solid var(--c-border)">
+                <div style="text-align:center">
+                  <div style="font-size:1.2rem;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                  <div style="font-size:.7rem;color:var(--c-text-muted)">Защита данных</div>
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:1.2rem"></div>
+                  <div style="font-size:.7rem;color:var(--c-text-muted)">Возврат 14 дней</div>
+                </div>
+                <div style="text-align:center">
+                  <div style="font-size:1.2rem;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                  <div style="font-size:.7rem;color:var(--c-text-muted)">Поддержка 7/7</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Success overlay -->
+  <div class="order-success" id="order-success">
+    <div class="order-success-card">
+      <div class="success-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <h2>Заказ оформлен!</h2>
+      <p>
+        Ваш заказ <strong id="order-num">#000000</strong> принят в обработку.<br>
+        Мы позвоним вам в течение 30 минут для подтверждения.
+      </p>
+      <div style="background:var(--c-bg);border-radius:var(--r-lg);padding:var(--gap-md);margin-bottom:var(--gap-xl);text-align:left">
+        <div style="font-size:.85rem;color:var(--c-text-muted);margin-bottom:4px">Что дальше?</div>
+          <div style="font-size:.875rem;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;align-items:center;gap:8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.18 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Звонок от менеджера для подтверждения</div>
+          <div style="display:flex;align-items:center;gap:8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg> Сборка и упаковка заказа</div>
+          <div style="display:flex;align-items:center;gap:8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Передача в службу доставки</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:var(--gap-md);justify-content:center;flex-wrap:wrap">
+        <a href="catalog.html" class="btn btn-primary">Продолжить покупки</a>
+        <a href="index.html" class="btn btn-secondary">На главную</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L4 8l6 2 6-2-6-6z" fill="white" opacity=".9"/><path d="M4 8l6 10 6-10-6 2-6-2z" fill="white" opacity=".7"/></svg></div>SkyStore</a><p style="margin-top:var(--gap-md)">Качественные спортивные аксессуары.</p></div>
+        <div class="footer-col"><h4>Каталог</h4><div class="footer-links"><a href="catalog.html">Все товары</a><a href="catalog.html?cat=bottles">Бутылки</a><a href="catalog.html?cat=expanders">Эспандеры</a><a href="catalog.html?cat=accessories">Аксессуары</a></div></div>
+        <div class="footer-col"><h4>Покупателям</h4><div class="footer-links"><a href="cart.html">Корзина</a><a href="checkout.html">Оформление заказа</a><a href="about.html">Доставка</a><a href="contacts.html">Контакты</a></div></div>
+        <div class="footer-col"><h4>Контакты</h4><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg><span>+7 (800) 123-45-67</span></div></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2024 SkyStore. Все права защищены.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* Highlight selected delivery option */
+    document.querySelectorAll('.delivery-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        document.querySelectorAll('.delivery-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        const radio = opt.querySelector('input[type="radio"]');
+        if (radio) radio.checked = true;
+        /* Show/hide address card */
+        const card = document.getElementById('address-card');
+        if (card) card.style.display = (radio && radio.value === 'pickup') ? 'none' : '';
+        if (typeof updateCartSummary === 'function') updateCartSummary();
+      });
+    });
+
+    /* Highlight selected payment */
+    document.querySelectorAll('[name="payment"]').forEach(r => {
+      r.addEventListener('change', () => {
+        document.querySelectorAll('label:has([name="payment"])').forEach(l => {
+          l.style.borderColor = 'var(--c-border)';
+          l.style.background  = '';
+        });
+        const lbl = r.closest('label');
+        if (lbl) { lbl.style.borderColor = 'var(--c-primary)'; lbl.style.background = 'var(--c-primary-pale)'; }
+      });
+    });
+  </script>
+</body>
+</ht    

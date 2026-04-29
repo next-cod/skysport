@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас — SkyStore</title>
+  <meta name="description" content="История магазина SkyStore, наша миссия, команда. Узнайте, почему тысячи спортсменов выбирают нас.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230EA5E9'/%3E%3Cpath d='M16 5L9 12l7 2.5 7-2.5L16 5z' fill='white' opacity='.95'/%3E%3Cpath d='M9 12l7 15 7-15-7 2.5L9 12z' fill='white' opacity='.75'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="about">
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L4 8l6 2 6-2-6-6z" fill="white" opacity=".9"/><path d="M4 8l6 10 6-10-6 2-6-2z" fill="white" opacity=".7"/></svg></div>
+          SkyStore
+        </a>
+        <nav class="nav">
+          <a href="index.html"    class="nav-link">Главная</a>
+          <a href="catalog.html"  class="nav-link">Каталог</a>
+          <a href="about.html"    class="nav-link active">О нас</a>
+          <a href="contacts.html" class="nav-link">Контакты</a>
+        </nav>
+        <div class="header-actions">
+          <a href="cart.html" class="cart-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            Корзина <span class="cart-count" style="display:none">0</span>
+          </a>
+          <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav">
+    <a href="index.html"    class="nav-link">Главная</a>
+    <a href="catalog.html"  class="nav-link">Каталог</a>
+    <a href="about.html"    class="nav-link">О нас</a>
+    <a href="contacts.html" class="nav-link">Контакты</a>
+    <a href="cart.html"     class="nav-link">Корзина</a>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- Hero -->
+    <div class="page-hero">
+      <div class="container">
+        <div class="about-hero-grid" data-reveal="up">
+          <div class="about-hero-text">
+            <div class="eyebrow">Наша история</div>
+            <h1>Магазин, созданный спортсменами для спортсменов</h1>
+            <p class="about-hero-desc">SkyStore появился в 2021 году из простой идеи: сделать качественное спортивное снаряжение доступным для каждого. Мы сами тренируемся и знаем, что нужно на тренировке.</p>
+            <a href="catalog.html" class="btn btn-primary">Перейти в каталог</a>
+          </div>
+          <div class="about-stats-grid">
+            <div class="about-stat-card">
+              <div class="about-stat-num" style="color:var(--c-primary)">3+</div>
+              <div class="about-stat-label">года на рынке</div>
+            </div>
+            <div class="about-stat-card">
+              <div class="about-stat-num" style="color:var(--c-accent)">4 800+</div>
+              <div class="about-stat-label">покупателей</div>
+            </div>
+            <div class="about-stat-card">
+              <div class="about-stat-num" style="color:var(--c-lime)">18+</div>
+              <div class="about-stat-label">товаров</div>
+            </div>
+            <div class="about-stat-card">
+              <div class="about-stat-num" style="color:var(--c-success)">4.8</div>
+              <div class="about-stat-label">средний рейтинг</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <section class="section" style="background:var(--c-white)">
+      <div class="container">
+        <div class="about-mission-grid">
+          <div data-reveal="right">
+            <div class="eyebrow">Наша миссия</div>
+            <h2>Делаем спорт доступным и комфортным</h2>
+            <p class="about-text">Мы убеждены, что правильное снаряжение мотивирует и помогает достигать результатов. Поэтому мы тщательно отбираем каждый товар, проверяем качество и честно описываем характеристики.</p>
+            <p class="about-text">Никакого маркетингового мусора — только то, что реально работает и помогает тренироваться лучше.</p>
+          </div>
+          <div class="about-mission-cards" data-reveal="left">
+            <div class="about-mission-item">
+              <div class="about-mission-icon"><span data-icon="search"></span></div>
+              <div>
+                <h4>Проверяем каждый товар</h4>
+                <p>Перед добавлением в каталог — тестирование и оценка качества</p>
+              </div>
+            </div>
+            <div class="about-mission-item">
+              <div class="about-mission-icon"><span data-icon="check"></span></div>
+              <div>
+                <h4>Честные описания</h4>
+                <p>Реальные характеристики без преувеличений и маркетинговых обещаний</p>
+              </div>
+            </div>
+            <div class="about-mission-item">
+              <div class="about-mission-icon"><span data-icon="shield"></span></div>
+              <div>
+                <h4>Долгосрочные отношения</h4>
+                <p>Мы работаем на повторные покупки, а значит — на ваше доверие</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section" style="background:var(--c-bg)" id="team">
+      <div class="container">
+        <div class="section-header" data-reveal="up">
+          <div class="eyebrow">Команда</div>
+          <h2>Люди за SkyStore</h2>
+          <p>Небольшая, но очень замотивированная команда</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card" data-reveal="up" data-delay="100">
+            <div class="team-avatar team-photo">
+              <img src="images/ceo%20photo.png" alt="Алексей Соколов" loading="lazy">
+            </div>
+            <div class="team-card-info">
+              <h4>Алексей Соколов</h4>
+              <span>Основатель & CEO</span>
+              <p style="font-size:.82rem;color:var(--c-text-muted);margin-top:8px">Марафонец, кроссфит-тренер. Основал SkyStore, чтобы спортивное снаряжение было честным и доступным.</p>
+            </div>
+          </div>
+          <div class="team-card" data-reveal="up" data-delay="200">
+            <div class="team-avatar team-photo">
+              <img src="images/manage%20photo.png" alt="Мария Петрова" loading="lazy">
+            </div>
+            <div class="team-card-info">
+              <h4>Мария Петрова</h4>
+              <span>Менеджер по продукту</span>
+              <p style="font-size:.82rem;color:var(--c-text-muted);margin-top:8px">Подбирает и тестирует товары. Фитнес-инструктор с опытом 8 лет, знает всё о спортивном инвентаре.</p>
+            </div>
+          </div>
+          <div class="team-card" data-reveal="up" data-delay="300">
+            <div class="team-avatar team-photo">
+              <img src="images/delivery%20photo.png" alt="Дмитрий Волков" loading="lazy">
+            </div>
+            <div class="team-card-info">
+              <h4>Дмитрий Волков</h4>
+              <span>Логистика & доставка</span>
+              <p style="font-size:.82rem;color:var(--c-text-muted);margin-top:8px">Отвечает за то, чтобы заказы приходили быстро и в целости. Борец, понимает важность надёжности.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery section -->
+    <section class="section" style="background:var(--c-white)" id="delivery">
+      <div class="container">
+        <div class="section-header" data-reveal="up">
+          <div class="eyebrow">Доставка</div>
+          <h2>Доставка и оплата</h2>
+          <p>Быстро, надёжно и удобно</p>
+        </div>
+        <div class="about-delivery-grid">
+          <div class="feature-card" data-reveal="up" data-delay="100">
+            <div class="feature-icon" style="background:#e0f2fe;color:#0284c7"><span data-icon="truck"></span></div>
+            <h4>Стандартная доставка</h4>
+            <p>2–4 рабочих дня. Стоимость 290 ₽. При заказе от 3 000 ₽ — бесплатно по всей России.</p>
+          </div>
+          <div class="feature-card" data-reveal="up" data-delay="200">
+            <div class="feature-icon" style="background:#fef3c7;color:#b45309"><span data-icon="arrow"></span></div>
+            <h4>Экспресс-доставка</h4>
+            <p>На следующий рабочий день. Стоимость 490 ₽. Доступна в Москве и Санкт-Петербурге.</p>
+          </div>
+          <div class="feature-card" data-reveal="up" data-delay="300">
+            <div class="feature-icon" style="background:#dcfce7;color:#15803d"><span data-icon="pin"></span></div>
+            <h4>Самовывоз</h4>
+            <p>Бесплатно. Адрес: Москва, Спортивная ул., 12. Пн–Пт 10:00–19:00, Сб 11:00–17:00.</p>
+          </div>
+        </div>
+
+        <div class="about-payment-block" data-reveal="up">
+          <h3>Способы оплаты</h3>
+          <div class="about-payment-grid">
+            <div class="about-payment-item">
+              <div class="about-payment-icon"><span data-icon="credit"></span></div>
+              <div class="about-payment-name">Наличными</div>
+              <div class="about-payment-sub">При получении</div>
+            </div>
+            <div class="about-payment-item">
+              <div class="about-payment-icon"><span data-icon="credit"></span></div>
+              <div class="about-payment-name">Картой</div>
+              <div class="about-payment-sub">Visa, MC, МИР</div>
+            </div>
+            <div class="about-payment-item">
+              <div class="about-payment-icon"><span data-icon="send"></span></div>
+              <div class="about-payment-name">СБП</div>
+              <div class="about-payment-sub">Без комиссии</div>
+            </div>
+            <div class="about-payment-item">
+              <div class="about-payment-icon"><span data-icon="credit"></span></div>
+              <div class="about-payment-name">Перевод</div>
+              <div class="about-payment-sub">По реквизитам</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Returns -->
+    <section class="section" style="background:var(--c-bg)" id="returns">
+      <div class="container">
+        <div class="about-returns-grid">
+          <div data-reveal="right">
+            <div class="eyebrow">Возврат</div>
+            <h2>Простой возврат товара</h2>
+            <p class="about-text">Если товар не подошёл — не переживайте. Мы принимаем возврат в течение 14 дней с момента получения без лишних вопросов.</p>
+            <div class="about-steps">
+              <div class="about-step">
+                <div class="about-step-num">1</div>
+                <span>Свяжитесь с нами по телефону или email</span>
+              </div>
+              <div class="about-step">
+                <div class="about-step-num">2</div>
+                <span>Упакуйте товар в оригинальную упаковку</span>
+              </div>
+              <div class="about-step">
+                <div class="about-step-num">3</div>
+                <span>Отправьте посылку или привезите в наш офис</span>
+              </div>
+              <div class="about-step">
+                <div class="about-step-num about-step-done">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                </div>
+                <span>Деньги вернём в течение 3–5 рабочих дней</span>
+              </div>
+            </div>
+          </div>
+          <div data-reveal="left">
+            <div class="about-returns-card">
+              <h3>14 дней</h3>
+              <p>Мы даём вам 14 дней на проверку товара. Не понравился — вернём деньги полностью, без вычетов.</p>
+              <a href="contacts.html" class="btn about-returns-btn">Связаться с нами</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+      <div class="container" style="position:relative;z-index:1">
+        <div data-reveal="up">
+          <h2>Присоединяйтесь к SkyStore</h2>
+          <p>Тысячи спортсменов уже выбрали нас. Будьте среди первых, кто тренируется правильно.</p>
+          <a href="catalog.html" class="btn btn-lg cta-btn" style="margin-top:var(--gap-xl)">
+            Смотреть каталог
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L4 8l6 2 6-2-6-6z" fill="white" opacity=".9"/><path d="M4 8l6 10 6-10-6 2-6-2z" fill="white" opacity=".7"/></svg></div>SkyStore</a>
+          <p style="margin-top:var(--gap-md)">Качественные спортивные аксессуары для ваших тренировок.</p>
+        </div>
+        <div class="footer-col"><h4>Каталог</h4><div class="footer-links"><a href="catalog.html">Все товары</a><a href="catalog.html?cat=bottles">Бутылки</a><a href="catalog.html?cat=expanders">Эспандеры</a><a href="catalog.html?cat=accessories">Аксессуары</a></div></div>
+        <div class="footer-col"><h4>О компании</h4><div class="footer-links"><a href="about.html">О нас</a><a href="about.html#team">Команда</a><a href="about.html#delivery">Доставка</a><a href="about.html#returns">Возврат</a></div></div>
+        <div class="footer-col"><h4>Контакты</h4><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.09a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg><span>+7 (800) 123-45-67</span></div><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>hello@skystore.ru</span></div></div>
+      </div>
+        <div class="footer-bottom"><p>&copy; 2026 SkyStore. Все права защищены.</p><span style="font-size:.85rem;color:rgba(255,255,255,.4)">Сделано для спортсменов</span></div>
+    </div>
+  </footer>
+
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
