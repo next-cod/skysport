@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Контакты — SkyStore</title>
+  <title>Контакты – SkyStore</title>
   <meta name="description" content="Свяжитесь с командой SkyStore. Телефон, email, адрес. Отвечаем быстро каждый день.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230EA5E9'/%3E%3Cpath d='M16 5L9 12l7 2.5 7-2.5L16 5z' fill='white' opacity='.95'/%3E%3Cpath d='M9 12l7 15 7-15-7 2.5L9 12z' fill='white' opacity='.75'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="contacts">
@@ -51,9 +51,8 @@
     <div class="page-hero">
       <div class="container">
         <div data-reveal="up">
-          <div class="eyebrow" style="display:inline-flex;margin-bottom:var(--gap-md)">Будем на связи</div>
-          <h1>Контакты</h1>
-          <p>Есть вопрос? Мы всегда рады помочь — пишите или звоните</p>
+          <h1>Свяжитесь с нами</h1>
+          <p>Ответим на любой вопрос – пишите, звоните или приходите в офис</p>
         </div>
       </div>
     </div>
@@ -115,7 +114,7 @@
         <div class="contacts-form-wrap" data-reveal="up">
           <div class="contact-form-card">
             <h3>Написать нам</h3>
-            <p>Расскажите о вашем вопросе — ответим в кратчайшие сроки</p>
+            <p>Расскажите о вашем вопросе – ответим в кратчайшие сроки</p>
 
             <form id="contact-form" novalidate>
               <div class="contacts-form-grid">
@@ -170,81 +169,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" style="background:var(--c-bg)">
-      <div class="container">
-        <div class="section-header" data-reveal="up">
-          <div class="eyebrow">FAQ</div>
-          <h2>Частые вопросы</h2>
-          <p>Ответы на самые популярные вопросы покупателей</p>
-        </div>
-
-        <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:var(--gap-sm)">
-
-          <div class="faq-item" data-reveal="up" data-delay="100">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              <span>Нужна ли регистрация для заказа?</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-a">
-              Нет, регистрация не нужна. Вы можете оформить заказ просто указав имя, телефон и адрес доставки.
-            </div>
-          </div>
-
-          <div class="faq-item" data-reveal="up" data-delay="150">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              <span>Как долго идёт доставка?</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-a">
-              Стандартная доставка — 2–4 рабочих дня. Экспресс — на следующий день (Москва и СПб). Мы отправляем заказы в течение 24 часов после подтверждения.
-            </div>
-          </div>
-
-          <div class="faq-item" data-reveal="up" data-delay="200">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              <span>Можно ли вернуть товар, если он не подошёл?</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-a">
-              Да, принимаем возврат в течение 14 дней. Товар должен быть в оригинальной упаковке и без следов использования. Свяжитесь с нами — расскажем, как вернуть.
-            </div>
-          </div>
-
-          <div class="faq-item" data-reveal="up" data-delay="250">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              <span>Есть ли бесплатная доставка?</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-a">
-              При заказе от 3 000 ₽ доставка бесплатна по всей России. Самовывоз из нашего офиса в Москве — всегда бесплатно.
-            </div>
-          </div>
-
-          <div class="faq-item" data-reveal="up" data-delay="300">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              <span>Как отследить заказ?</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-a">
-              После отправки мы пришлём вам трек-номер по телефону или email. Также можно позвонить нам или написать — уточним статус заказа.
-            </div>
-          </div>
-
-          <div class="faq-item" data-reveal="up" data-delay="350">
-            <button class="faq-q" onclick="toggleFaq(this)">
-              <span>Как связаться с поддержкой?</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-            </button>
-            <div class="faq-a">
-              Позвоните по номеру +7 (800) 123-45-67 (бесплатно), напишите на hello@skystore.ru или воспользуйтесь формой выше. Работаем ежедневно.
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
   </main>
 
   <footer class="site-footer">
@@ -264,54 +188,5 @@
 
   <script src="js/cart.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    /* FAQ accordion */
-    function toggleFaq(btn) {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    }
-  </script>
-
-  <style>
-    .faq-item {
-      background: var(--c-white);
-      border-radius: var(--r-lg);
-      border: 1px solid var(--c-border-light);
-      overflow: hidden;
-      transition: var(--t-normal);
-      box-shadow: var(--shadow-card);
-    }
-    .faq-item:hover { box-shadow: var(--shadow-md); }
-    .faq-q {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--gap-md);
-      padding: var(--gap-lg);
-      font-size: .95rem;
-      font-weight: 600;
-      color: var(--c-dark);
-      text-align: left;
-      cursor: pointer;
-      background: none;
-      border: none;
-      transition: var(--t-fast);
-    }
-    .faq-q:hover { color: var(--c-primary); }
-    .faq-icon { flex-shrink: 0; transition: transform var(--t-normal); }
-    .faq-a {
-      display: none;
-      padding: 0 var(--gap-lg) var(--gap-lg);
-      font-size: .9rem;
-      color: var(--c-text-muted);
-      line-height: 1.7;
-    }
-    .faq-item.open .faq-a   { display: block; }
-    .faq-item.open .faq-icon { transform: rotate(180deg); }
-    .faq-item.open .faq-q   { color: var(--c-primary); }
-  </style>
 </body>
 </html>
