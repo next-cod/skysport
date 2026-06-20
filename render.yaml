@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: skystore-bot
+    runtime: docker
+    dockerfilePath: skystore-bot/Dockerfile
+    dockerContext: .
+    envVars:
+      - key: BOT_TOKEN
+        sync: false        # Render попросит вставить токен вручную — это безопасно
+      - key: PORT
+        value: "10000"
+    healthCheckPath: /health

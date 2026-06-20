@@ -31,7 +31,7 @@ SITE_URL = os.getenv("SITE_URL", "").strip()
 # Для локального запуска – оставь пустым, бот включит long polling.
 # Для Render / Koyeb – вставь URL сервиса (без слэша в конце):
 #   WEBHOOK_URL=https://skystore-bot.onrender.com
-WEBHOOK_URL = os.getenv("WEBHOOK_URL", "").rstrip("/")
+WEBHOOK_URL = (os.getenv("WEBHOOK_URL") or os.getenv("RENDER_EXTERNAL_URL", "")).rstrip("/")
 PORT = int(os.getenv("PORT", "10000"))
 
 # ─── Настройки магазина ────────────────────────────────────────────
