@@ -735,7 +735,7 @@ h4 { font-size: 1rem; }
 /* ── 15. PRODUCT PAGE ─────────────────────────────────────────── */
 .product-page { padding-bottom: 88px; }
 .breadcrumb {
-  display: flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
   font-size: .84rem; color: var(--c-muted); margin-bottom: 32px;
 }
 .breadcrumb a:hover { color: var(--c-primary); }
@@ -944,6 +944,7 @@ h4 { font-size: 1rem; }
 .form-group.full { grid-column: 1 / -1; }
 .form-group label { font-size: .8rem; font-weight: 600; }
 .form-group input, .form-group textarea, .form-group select {
+  width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;
   padding: 11px 14px; border: 1.5px solid var(--c-border);
   border-radius: var(--r-md); font-size: .875rem;
   background: #fff; transition: var(--t);
@@ -1197,6 +1198,11 @@ h4 { font-size: 1rem; }
 [data-reveal="scale"] { transform: scale(.92); }
 [data-reveal="fade"]  { transform: none; }
 [data-reveal].revealed { opacity: 1; transform: translate(0) scale(1); }
+/* On phones, reveal vertically only — horizontal slide-in can briefly push
+   full-width blocks past the viewport edge. Keeps motion, kills the risk. */
+@media (max-width: 640px) {
+  [data-reveal="left"], [data-reveal="right"] { transform: translateY(28px); }
+}
 [data-delay="100"] { transition-delay: .1s; }
 [data-delay="150"] { transition-delay: .15s; }
 [data-delay="200"] { transition-delay: .2s; }
@@ -1238,6 +1244,21 @@ h4 { font-size: 1rem; }
 /* ── 24. RESPONSIVE ───────────────────────────────────────────── */
 html, body { overflow-x: hidden; }
 img, video { max-width: 100%; }
+
+/* Robustness: let 1fr/flex tracks shrink below content so grids never
+   blow out their container on narrow screens (no horizontal overflow). */
+.cat-grid > *, .products-grid > *, .team-grid > *, .features-grid > *,
+.stats-grid > *, .about-stats-grid > *, .about-delivery-grid > *,
+.about-payment-grid > *, .contact-cards-grid > *, .footer-grid > *,
+.hero-cards > *, .product-guarantees > *, .form-grid > *,
+.contacts-form-grid > *, .checkout-layout > *, .cart-layout > *,
+.product-detail-grid > *, .catalog-layout > * { min-width: 0; }
+.cat-card, .product-card, .team-card, .feature-card,
+.hero-card, .stat-item, .about-stat-card, .contact-card { min-width: 0; }
+.cat-card-img img, .product-image img { width: 100%; }
+/* Decorative oversized background type is hidden on small screens anyway —
+   take it fully out of flow so it can't contribute stray overflow. */
+@media (max-width: 900px) { .hero-bg-type { display: none; } }
 
 @media (max-width: 1100px) {
   .products-grid  { grid-template-columns: repeat(3,1fr); }
