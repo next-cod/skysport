@@ -1,10 +1,10 @@
-/* ============================================================
-   SkyStore — Cart & Products v2
+﻿/* ============================================================
+   SkyStore – Cart & Products v2
    ============================================================ */
 
 /* ─── PRODUCT DATA ──────────────────────────────────────────── */
 const PRODUCTS = [
-  /* БУТЫЛКИ — одна модель в 4 цветах */
+  /* БУТЫЛКИ – одна модель в 4 цветах */
   { id:1,  name:"Спортивная бутылка SkyBottle", category:"bottles", categoryLabel:"Бутылки",
     price:1490, oldPrice:null, rating:4.8, reviews:124, badge:"Хит", badgeClass:"badge-hit",
     img:"images/blue.png",
@@ -33,7 +33,7 @@ const PRODUCTS = [
     chars:[{label:"Цвет",value:"Жёлтый"},{label:"Объём",value:"750 мл"},{label:"Материал",value:"Алюминий"},{label:"Вес",value:"180 г"},{label:"Гарантия",value:"2 года"}],
     colors:["#F2C744"] },
 
-  /* ЭСПАНДЕРЫ — одна модель в 4 цветах */
+  /* ЭСПАНДЕРЫ – одна модель в 4 цветах */
   { id:5,  name:"Эспандер SkyFlex", category:"expanders", categoryLabel:"Эспандеры",
     price:890, oldPrice:null, rating:4.7, reviews:165, badge:"Хит", badgeClass:"badge-hit",
     img:"images/espander%20blue.png",
@@ -62,7 +62,7 @@ const PRODUCTS = [
     chars:[{label:"Цвет",value:"Жёлтый"},{label:"Сопротивление",value:"15–25 кг"},{label:"Материал",value:"Натуральный латекс"},{label:"Длина",value:"100 см"},{label:"Гарантия",value:"1 год"}],
     colors:["#F2C744"] },
 
-  /* РЮКЗАКИ — одна модель в 3 цветах */
+  /* РЮКЗАКИ – одна модель в 3 цветах */
   { id:9,  name:"Рюкзак SkyPack", category:"backpacks", categoryLabel:"Рюкзаки",
     price:2490, oldPrice:null, rating:4.8, reviews:64, badge:"Хит", badgeClass:"badge-hit",
     img:"images/back%20blue.png",
@@ -84,7 +84,7 @@ const PRODUCTS = [
     chars:[{label:"Цвет",value:"Красный"},{label:"Объём",value:"25 л"},{label:"Материал",value:"Нейлон 600D"},{label:"Размер",value:"47×30×18 см"},{label:"Гарантия",value:"1 год"}],
     colors:["#E2433F"] },
 
-  /* ПЕРЧАТКИ — одна модель в 2 цветах */
+  /* ПЕРЧАТКИ – одна модель в 2 цветах */
   { id:11, name:"Перчатки SkyGrip", category:"gloves", categoryLabel:"Перчатки",
     price:1190, oldPrice:null, rating:4.7, reviews:93, badge:"Хит", badgeClass:"badge-hit",
     img:"images/per%20blue.png",
@@ -99,7 +99,7 @@ const PRODUCTS = [
     chars:[{label:"Цвет",value:"Зелёный"},{label:"Размеры",value:"S / M / L / XL"},{label:"Материал",value:"Кожа + нейлон"},{label:"Ладонь",value:"Антискользящая"},{label:"Гарантия",value:"6 мес"}],
     colors:["#5BB94A"] },
 
-  /* КОВРИКИ — одна модель в 2 цветах */
+  /* КОВРИКИ – одна модель в 2 цветах */
   { id:13, name:"Коврик SkyMat", category:"mats", categoryLabel:"Коврики",
     price:1690, oldPrice:null, rating:4.8, reviews:112, badge:"Хит", badgeClass:"badge-hit",
     img:"images/cover%20green.png",
@@ -114,7 +114,7 @@ const PRODUCTS = [
     chars:[{label:"Цвет",value:"Красный"},{label:"Размер",value:"183×61 см"},{label:"Толщина",value:"6 мм"},{label:"Материал",value:"TPE"},{label:"Гарантия",value:"1 год"}],
     colors:["#E2433F"] },
 
-  /* АКСЕССУАРЫ — разные товары */
+  /* АКСЕССУАРЫ – разные товары */
   { id:15, name:"Скакалка SkyRope", category:"accessories", categoryLabel:"Аксессуары",
     price:990, oldPrice:null, rating:4.8, reviews:118, badge:"Хит", badgeClass:"badge-hit",
     img:"images/skakal%20blue.png",
@@ -238,7 +238,7 @@ function applyPromo() {
     activePromo = { code, discount: promo.discount };
     input.disabled = true;
     document.getElementById('promo-apply-btn').disabled = true;
-    msgEl.textContent = `Промокод ${code} применён — скидка ${promo.discount * 100}%`;
+    msgEl.textContent = `Промокод ${code} применён – скидка ${promo.discount * 100}%`;
     msgEl.className = 'promo-msg promo-msg-ok';
   } else {
     activePromo = null;

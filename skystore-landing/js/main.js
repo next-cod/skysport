@@ -1,5 +1,5 @@
-/* ============================================================
-   SkyStore — Main JS v2
+﻿/* ============================================================
+   SkyStore – Main JS v2
    ============================================================ */
 
 /* ─── ICONS ─────────────────────────────────────────────────── */
@@ -309,7 +309,7 @@ function initProductPage() {
   const bcEl  = document.getElementById('breadcrumb-name'); if (bcEl) bcEl.textContent = p.name;
   const bcCat = document.getElementById('breadcrumb-cat');  if (bcCat) { bcCat.textContent = p.categoryLabel; bcCat.href = `catalog.html?cat=${p.category}`; }
 
-  document.title = `${p.name} — SkyStore`;
+  document.title = `${p.name} – SkyStore`;
 
   let qty = 1;
   const qtyDisplay = document.getElementById('prod-qty');
@@ -421,7 +421,7 @@ function initContactForm() {
   });
 }
 
-/* ─── HERO VIDEO — autoplay-on-view, freeze on last frame ──────── */
+/* ─── HERO VIDEO – autoplay-on-view, freeze on last frame ──────── */
 (function initHeroVideo() {
   const video = document.querySelector('.hero-video');
   if (!video) return;

@@ -1,5 +1,5 @@
-/* ============================================================
-   SkyStore — Redesign 2.0 · Apple-style minimalism
+﻿/* ============================================================
+   SkyStore – Redesign 2.0 · Apple-style minimalism
    ============================================================ */
 
 /* ── 1. VARIABLES ────────────────────────────────────────── */
@@ -224,8 +224,8 @@ h4 { font-size: 1rem; }
 .btn-dark { background: var(--c-dark); color: #fff; }
 .btn-dark:hover { background: #1e293b; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
 
-/* ── 8. HERO — centered editorial ───────────────────────────── */
-/* ── HERO — Swiss editorial, full-width typography ── */
+/* ── 8. HERO – centered editorial ───────────────────────────── */
+/* ── HERO – Swiss editorial, full-width typography ── */
 .hero {
   min-height: calc(100vh - var(--header-h));
   background: #fff;
@@ -234,7 +234,7 @@ h4 { font-size: 1rem; }
 }
 .hero > .container { width: 100%; padding-top: 44px; padding-bottom: 44px; }
 
-/* Background decorative type — depth layer */
+/* Background decorative type – depth layer */
 .hero-bg-type {
   position: absolute; right: -2%; top: 50%; transform: translateY(-54%);
   pointer-events: none; user-select: none; z-index: 0;
@@ -280,7 +280,7 @@ h4 { font-size: 1rem; }
   opacity: 0; animation: fadeUp .65s .15s forwards;
 }
 
-/* Side column — desc + trust aligned to bottom of h1 */
+/* Side column – desc + trust aligned to bottom of h1 */
 .hero-side {
   padding-bottom: 6px;
   opacity: 0; animation: fadeUp .65s .28s forwards;
@@ -302,7 +302,7 @@ h4 { font-size: 1rem; }
   background: var(--c-primary); flex-shrink: 0;
 }
 
-/* Stat cards — horizontal row with hairline dividers */
+/* Stat cards – horizontal row with hairline dividers */
 .hero-cards {
   position: relative; z-index: 1;
   display: grid; grid-template-columns: repeat(4, 1fr);
@@ -390,7 +390,7 @@ h4 { font-size: 1rem; }
 .cat-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-slow); }
 .cat-card:hover .cat-card-img img { transform: scale(1.04); }
 
-/* PNG product variant — seamless white, large product */
+/* PNG product variant – seamless white, large product */
 .cat-card-img-product {
   background: #fff;
   position: relative;
@@ -440,7 +440,7 @@ h4 { font-size: 1rem; }
 }
 .product-card:hover .product-image img { transform: translate(-50%, -50%) scale(1.05); }
 
-/* Bottles render taller — anchor to top so cap stays visible, crop bottom only */
+/* Bottles render taller – anchor to top so cap stays visible, crop bottom only */
 .product-image.product-image-bottle img {
   width: 118%; height: 118%;
   top: 58%;
@@ -659,7 +659,7 @@ h4 { font-size: 1rem; }
 .search-box input:focus { outline: none; border-color: var(--c-primary); box-shadow: 0 0 0 3px rgba(14,165,233,.08); }
 .search-box svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--c-muted); pointer-events: none; }
 
-/* legacy — kept for fallback */
+/* legacy – kept for fallback */
 .sort-select {
   padding: 11px 34px 11px 14px; border: 1.5px solid var(--c-border);
   border-radius: var(--r-full); font-size: .84rem; font-weight: 500;
@@ -1198,7 +1198,7 @@ h4 { font-size: 1rem; }
 [data-reveal="scale"] { transform: scale(.92); }
 [data-reveal="fade"]  { transform: none; }
 [data-reveal].revealed { opacity: 1; transform: translate(0) scale(1); }
-/* On phones, reveal vertically only — horizontal slide-in can briefly push
+/* On phones, reveal vertically only – horizontal slide-in can briefly push
    full-width blocks past the viewport edge. Keeps motion, kills the risk. */
 @media (max-width: 640px) {
   [data-reveal="left"], [data-reveal="right"] { transform: translateY(28px); }
@@ -1256,7 +1256,7 @@ img, video { max-width: 100%; }
 .cat-card, .product-card, .team-card, .feature-card,
 .hero-card, .stat-item, .about-stat-card, .contact-card { min-width: 0; }
 .cat-card-img img, .product-image img { width: 100%; }
-/* Decorative oversized background type is hidden on small screens anyway —
+/* Decorative oversized background type is hidden on small screens anyway –
    take it fully out of flow so it can't contribute stray overflow. */
 @media (max-width: 900px) { .hero-bg-type { display: none; } }
 
@@ -1413,7 +1413,7 @@ img, video { max-width: 100%; }
   #promo-apply-btn { width: 100%; }
 }
 
-/* Cart item — collapse controls to vertical at narrow widths */
+/* Cart item – collapse controls to vertical at narrow widths */
 @media (max-width: 460px) {
   .cart-item {
     grid-template-columns: 64px 1fr;
@@ -1511,7 +1511,7 @@ img, video { max-width: 100%; }
   .breadcrumbs { font-size: .72rem; }
   .checkout-form-card { padding: 18px 14px; }
   .checkout-form-card h3 { font-size: .95rem; }
-  /* About / contacts — keep numbers tight */
+  /* About / contacts – keep numbers tight */
   .about-stat-card { padding: 18px 12px; }
   .about-stat-num { font-size: 1.7rem; white-space: nowrap; }
   .about-stat-label { font-size: .72rem; }
@@ -1556,7 +1556,7 @@ img, video { max-width: 100%; }
   .btn-remove { width: 28px; height: 28px; }
   .cart-summary { padding: 14px 10px; }
   .summary-total .value { font-size: 1rem; }
-  /* About stats — keep 2x2 readable */
+  /* About stats – keep 2x2 readable */
   .about-stat-num { font-size: 1.45rem; }
   .about-stat-label { font-size: .68rem; line-height: 1.3; }
   .about-stats-grid { gap: 10px; }
@@ -1598,7 +1598,7 @@ img, video { max-width: 100%; }
   .cart-checkout-btn { padding: 11px 14px; font-size: .82rem; }
   .delivery-option { padding: 8px 10px; gap: 6px; flex-wrap: wrap; }
   .delivery-label, .delivery-price { font-size: .74rem; }
-  /* About stats — go single column only at extreme */
+  /* About stats – go single column only at extreme */
   .about-stats-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
   .about-stat-card { padding: 12px 8px; }
   .about-stat-num { font-size: 1.18rem; }
@@ -1699,7 +1699,7 @@ img, video { max-width: 100%; }
 
 @media (max-width: 240px) {
   .container { padding: 0 6px; }
-  /* Hide cart count badge text — tiny screen, just show icon */
+  /* Hide cart count badge text – tiny screen, just show icon */
   .nav-link { padding: 6px 8px; font-size: .8rem; }
   .cart-item {
     grid-template-columns: 1fr;
@@ -1722,7 +1722,7 @@ img, video { max-width: 100%; }
   .about-stat-num { font-size: 1.08rem; }
 }
 
-/* ── NEW HERO CENTER — responsive ────────────────────────────── */
+/* ── NEW HERO CENTER – responsive ────────────────────────────── */
 @media (max-width: 900px) {
   .hero-center { padding: 56px 0 52px; }
   .hero-h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); }
@@ -1801,7 +1801,7 @@ img, video { max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   SWISS HERO — granular responsive (fills gaps between 900–280px)
+   SWISS HERO – granular responsive (fills gaps between 900–280px)
    ═══════════════════════════════════════════════════════════════ */
 
 /* 875px ─────────────────────────────────────────────────────── */
@@ -1962,7 +1962,7 @@ img, video { max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   CTA SECTION — small screens
+   CTA SECTION – small screens
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 640px) {
   .cta-card { padding: 40px 24px; }
@@ -1981,7 +1981,7 @@ img, video { max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   ABOUT PAGE — granular mobile
+   ABOUT PAGE – granular mobile
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 640px) {
   .about-hero-text h1 { font-size: 1.6rem; }
@@ -2013,7 +2013,7 @@ img, video { max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   CONTACTS PAGE — granular mobile
+   CONTACTS PAGE – granular mobile
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 640px) {
   .page-hero h1 { font-size: 1.6rem; }
@@ -2033,7 +2033,7 @@ img, video { max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   PAGE TITLE BAR — all pages
+   PAGE TITLE BAR – all pages
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 500px) {
   .page-title-bar { padding: 20px 0; }
@@ -2045,7 +2045,7 @@ img, video { max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   SECTION HEADER — uniform scaling
+   SECTION HEADER – uniform scaling
    ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 640px) {
   .section-header h2 { font-size: 1.4rem; }
@@ -2074,7 +2074,7 @@ img, video { max-width: 100%; }
 /* ── 26. TEXT WRAP ────────────────────────────────────────────── */
 h1, h2, h3, .hero-h1 { text-wrap: balance; }
 
-/* ── 27. MOBILE HERO TITLE — bigger, reads like a real headline ──── */
+/* ── 27. MOBILE HERO TITLE – bigger, reads like a real headline ──── */
 @media (max-width: 640px) {
   .hero-h1 { font-size: clamp(2.1rem, 9.5vw, 2.9rem); line-height: 1.12; }
 }
