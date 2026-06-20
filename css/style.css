@@ -1009,19 +1009,20 @@ h4 { font-size: 1rem; }
 .contact-card-info a:hover { color: var(--c-primary); }
 .contact-card-sub { font-size: .75rem; color: var(--c-muted); margin-top: 2px; }
 
-.messenger-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-.messenger-btn {
-  display: inline-flex; align-items: center;
-  padding: 6px 14px; border-radius: var(--r-full);
-  font-size: .8rem; font-weight: 600; transition: var(--t);
-  justify-content: center;
+.messenger-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+.messenger-links .messenger-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 16px; border-radius: var(--r-full);
+  font-size: .82rem; font-weight: 700; color: #fff;
+  transition: var(--t); justify-content: center;
+  box-shadow: 0 4px 12px -4px rgba(0,0,0,.25);
 }
-.messenger-tg  { background: var(--c-primary-pale); color: var(--c-primary); }
-.messenger-tg:hover  { background: var(--c-primary); color: #fff; }
-.messenger-wa  { background: #f0fdf4; color: #16a34a; }
-.messenger-wa:hover  { background: #16a34a; color: #fff; }
-.messenger-vk  { background: #f3f0ff; color: #7c3aed; }
-.messenger-vk:hover  { background: #7c3aed; color: #fff; }
+.messenger-links .messenger-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.messenger-links .messenger-btn:hover,
+.contact-card-info .messenger-btn:hover { color: #fff; transform: translateY(-2px); box-shadow: 0 8px 18px -6px rgba(0,0,0,.35); filter: brightness(1.08); }
+.messenger-tg  { background: #229ED9; }
+.messenger-wa  { background: #25D366; }
+.messenger-vk  { background: #0077FF; }
 
 .contacts-map-wrap {
   border-radius: var(--r-xl); overflow: hidden;
