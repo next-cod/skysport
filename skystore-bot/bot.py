@@ -55,6 +55,8 @@ def _build_dp() -> Dispatcher:
 async def _setup(bot: Bot, dp: Dispatcher) -> None:
     db.init_db()
     await bot.set_my_commands(COMMANDS)
+    # Текст на пустом экране до нажатия START (это не сообщение, а описание бота)
+    await bot.set_my_description("Чтобы начать, нажмите /start")
     me = await bot.get_me()
     logging.info("SkyStore bot запущен: @%s", me.username)
 
