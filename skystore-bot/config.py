@@ -16,7 +16,9 @@ load_dotenv(BASE_DIR / ".env")
 
 # Картинки товаров лежат в папке сайта (переиспользуем те же файлы)
 LANDING_IMAGES = BASE_DIR.parent / "skystore-landing" / "images"
-DB_PATH = BASE_DIR / "skystore.db"
+# На Amvera /data — постоянное хранилище, локально пишем рядом с ботом
+_data = Path("/data")
+DB_PATH = (_data / "skystore.db") if _data.exists() else (BASE_DIR / "skystore.db")
 
 # ─── Секреты из .env ───────────────────────────────────────────────
 BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
