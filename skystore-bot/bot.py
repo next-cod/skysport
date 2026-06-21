@@ -57,8 +57,7 @@ async def _setup(bot: Bot, dp: Dispatcher) -> None:
     await bot.set_my_commands(COMMANDS)
     # Текст на пустом экране до нажатия START (это не сообщение, а описание бота)
     await bot.set_my_description(
-        "SkyStore – магазин спортивной экипировки для тренировок и активной жизни. "
-        "Бутылки, эспандеры, рюкзаки, перчатки, коврики и многое другое.\n\n"
+        "SkyStore – магазин спортивной экипировки для тренировок и активной жизни.\n\n"
         "Чтобы начать, нажмите /start 👇"
     )
     me = await bot.get_me()
