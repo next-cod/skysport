@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNav();
   initCounters();
   injectIcons();
+  initCustomSelects();
 
   const page = document.body.dataset.page;
   if (page === 'home')     initHome();
@@ -60,6 +61,152 @@ function injectIcons() {
     const name = el.dataset.icon;
     if (ICONS[name]) el.innerHTML = ICONS[name];
   });
+}
+
+/* ─── CUSTOM SELECT (progressive enhancement) ────────────────────
+   Turns any <select data-csel> into the site's styled dropdown
+   (matches the catalog sort menu). The native <select> stays in the
+   DOM — hidden but still submitting its value — so it degrades
+   gracefully and keeps the form working if JS is unavailable.       */
+const CSEL_CHEVRON = `<svg class="csel-chevron" width="11" height="11" viewBox="0 0 11 7" fill="none"><path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const CSEL_CHECK   = `<svg class="csel-check" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>`;
+
+function initCustomSelects(root = document) {
+  root.querySelectorAll('select[data-csel]').forEach(buildCustomSelect);
+}
+
+function buildCustomSelect(select) {
+  if (select.dataset.cselReady) return;
+  select.dataset.cselReady = '1';
+
+  const placeholder = select.dataset.placeholder || '';
+  const labelEl = select.id ? document.querySelector(`label[for="${select.id}"]`) : null;
+  const baseId  = select.id || ('csel-' + Math.random().toString(36).slice(2, 8));
+  const listId  = baseId + '-list';
+  const trigId  = baseId + '-trigger';
+
+  // wrapper inserted in place of the select, then the select moves inside
+  const wrap = document.createElement('div');
+  wrap.className = 'csel-wrap csel--form';
+  select.parentNode.insertBefore(wrap, select);
+  wrap.appendChild(select);
+  select.classList.add('csel-native');
+  select.setAttribute('aria-hidden', 'true');
+  select.tabIndex = -1;
+
+  // trigger button
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'csel-trigger';
+  trigger.id = trigId;
+  trigger.setAttribute('role', 'combobox');          // valid host for aria-activedescendant
+  trigger.setAttribute('aria-haspopup', 'listbox');
+  trigger.setAttribute('aria-expanded', 'false');
+  trigger.setAttribute('aria-controls', listId);
+  const labelSpan = document.createElement('span');
+  trigger.appendChild(labelSpan);
+  trigger.insertAdjacentHTML('beforeend', CSEL_CHEVRON);
+  wrap.insertBefore(trigger, select);
+
+  // dropdown list
+  const dropdown = document.createElement('div');
+  dropdown.className = 'csel-dropdown';
+  dropdown.id = listId;
+  dropdown.setAttribute('role', 'listbox');
+  if (labelEl) {
+    if (!labelEl.id) labelEl.id = baseId + '-label';
+    trigger.setAttribute('aria-labelledby', `${labelEl.id} ${trigId}`);
+    dropdown.setAttribute('aria-labelledby', labelEl.id);
+    labelEl.addEventListener('click', e => { e.preventDefault(); trigger.focus(); });
+  }
+
+  const optionEls = [...select.options].map((o, i) => {
+    const el = document.createElement('div');
+    el.className = 'csel-opt' + (o.value === '' ? ' csel-opt--placeholder' : '');
+    el.setAttribute('role', 'option');
+    el.id = `${listId}-opt-${i}`;
+    el.dataset.value = o.value;
+    const span = document.createElement('span');
+    span.textContent = o.textContent;
+    el.appendChild(span);
+    el.insertAdjacentHTML('beforeend', CSEL_CHECK);
+    dropdown.appendChild(el);
+    return el;
+  });
+  wrap.insertBefore(dropdown, select);
+
+  let highlight = -1;
+  const isOpen = () => trigger.classList.contains('open');
+
+  function sync() {
+    const val = select.value;
+    const isPlaceholder = val === '' && !!placeholder;
+    const sel = select.selectedOptions[0];
+    labelSpan.textContent = isPlaceholder ? placeholder : (sel ? sel.textContent : '');
+    trigger.classList.toggle('placeholder', isPlaceholder);
+    optionEls.forEach(el => {
+      const active = el.dataset.value === val;
+      el.classList.toggle('active', active);
+      el.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+
+  function setHighlight(i) {
+    highlight = (i + optionEls.length) % optionEls.length;
+    optionEls.forEach((el, idx) => el.classList.toggle('hl', idx === highlight));
+    const el = optionEls[highlight];
+    if (el) { trigger.setAttribute('aria-activedescendant', el.id); el.scrollIntoView({ block: 'nearest' }); }
+  }
+
+  function open() {
+    trigger.classList.add('open');
+    dropdown.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+    const cur = optionEls.findIndex(el => el.dataset.value === select.value);
+    setHighlight(cur < 0 ? 0 : cur);
+  }
+  function close() {
+    trigger.classList.remove('open');
+    dropdown.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.removeAttribute('aria-activedescendant');
+    optionEls.forEach(el => el.classList.remove('hl'));
+  }
+  function choose(i) {
+    const el = optionEls[i];
+    if (!el) return;
+    select.value = el.dataset.value;
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+    sync();
+    close();
+    trigger.focus();
+  }
+
+  // no stopPropagation: let the click bubble so sibling custom-selects close themselves
+  trigger.addEventListener('click', () => { isOpen() ? close() : open(); });
+  optionEls.forEach((el, i) => {
+    el.addEventListener('click', () => choose(i));
+    el.addEventListener('mousemove', () => { if (highlight !== i) setHighlight(i); });
+  });
+
+  trigger.addEventListener('keydown', e => {
+    switch (e.key) {
+      case 'ArrowDown': e.preventDefault(); isOpen() ? setHighlight(highlight + 1) : open(); break;
+      case 'ArrowUp':   e.preventDefault(); isOpen() ? setHighlight(highlight - 1) : open(); break;
+      case 'Enter':
+      case ' ':         e.preventDefault(); isOpen() ? choose(highlight) : open(); break;
+      case 'Escape':    if (isOpen()) { e.preventDefault(); close(); } break;
+      case 'Home':      if (isOpen()) { e.preventDefault(); setHighlight(0); } break;
+      case 'End':       if (isOpen()) { e.preventDefault(); setHighlight(optionEls.length - 1); } break;
+      case 'Tab':       if (isOpen()) close(); break;
+    }
+  });
+
+  document.addEventListener('click', e => { if (!wrap.contains(e.target)) close(); });
+  select.addEventListener('change', sync);
+  if (select.form) select.form.addEventListener('reset', () => setTimeout(sync, 0));
+
+  sync();
 }
 
 /* ─── HEADER ─────────────────────────────────────────────────── */

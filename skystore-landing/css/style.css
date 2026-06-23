@@ -729,6 +729,27 @@ h4 { font-size: 1rem; }
 
 .csel-check { flex-shrink: 0; color: var(--c-primary); opacity: 0; transition: opacity .15s; }
 .csel-opt.active .csel-check { opacity: 1; }
+/* keyboard-highlighted option (mirrors :hover) */
+.csel-opt.hl { background: var(--c-primary-pale, #f0f9ff); color: var(--c-primary-dark, #0284c7); }
+.csel-opt.active.hl { background: #e0f2fe; }
+
+/* ── form-field variant (e.g. «Тема обращения» on the contact form) ── */
+.csel--form { display: block; width: 100%; }
+.csel--form .csel-trigger {
+  width: 100%; min-width: 0; gap: 10px;
+  padding: 11px 14px; border-radius: var(--r-md);
+  font-size: .875rem; font-weight: 500;
+}
+.csel--form .csel-trigger.placeholder > span { color: var(--c-muted); font-weight: 400; }
+.csel--form .csel-dropdown {
+  left: 0; right: auto; width: 100%;
+  border-radius: var(--r-md);
+  max-height: min(300px, 56vh); overflow-y: auto;
+}
+.csel--form .csel-opt { padding: 11px 14px; }
+.csel--form .csel-opt:first-child { border-radius: var(--r-md) var(--r-md) 0 0; }
+.csel--form .csel-opt:last-child  { border-radius: 0 0 var(--r-md) var(--r-md); }
+.csel-opt--placeholder > span { color: var(--c-muted); font-weight: 400; }
 
 .catalog-results-count { font-size: .84rem; color: var(--c-muted); }
 
@@ -1612,6 +1633,7 @@ img, video { max-width: 100%; }
   .messenger-btn { flex: 1 1 100%; }
   .contact-form-card { padding: 18px 12px; }
   .form-group input, .form-group textarea, .form-group select { padding: 10px 11px; font-size: .82rem; }
+  .csel--form .csel-trigger, .csel--form .csel-opt { padding: 10px 11px; font-size: .82rem; }
   .contacts-submit-btn { white-space: normal; padding-left: 12px; padding-right: 12px; }
   /* Catalog filters */
   .filter-btn { font-size: .72rem; padding: 6px 7px; }
