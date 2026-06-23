@@ -1225,6 +1225,8 @@ h4 { font-size: 1rem; }
 .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; font-size: .875rem; margin-bottom: 10px; }
 .footer-contact-item svg { flex-shrink: 0; margin-top: 2px; opacity: .55; }
 .footer-bottom { display: flex; align-items: center; justify-content: space-between; font-size: .82rem; color: rgba(255,255,255,.35); }
+.footer-disclaimer { margin: 0 0 28px; padding: 16px 20px; border: 1px solid rgba(255,255,255,.1); border-radius: var(--r-lg); background: rgba(255,255,255,.03); font-size: .8rem; line-height: 1.7; color: rgba(255,255,255,.5); }
+.footer-disclaimer strong { color: #FBBF24; font-weight: 700; }
 .socials { display: flex; gap: 8px; }
 .social-link { width: 34px; height: 34px; border-radius: var(--r-sm); background: rgba(255,255,255,.07); display: flex; align-items: center; justify-content: center; transition: var(--t); }
 .social-link:hover { background: var(--c-primary); transform: translateY(-2px); }
