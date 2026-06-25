@@ -506,23 +506,16 @@ h4 { font-size: 1rem; }
   background: #fff; border-radius: var(--r-xl);
   padding: 32px 24px; text-align: center;
   border: 1px solid var(--c-border-soft); box-shadow: var(--shadow-xs);
-  transition: var(--t-slow); position: relative; overflow: hidden;
+  position: relative; overflow: hidden;
 }
-.feature-card::after {
-  content: ''; position: absolute;
-  bottom: 0; left: 0; right: 0; height: 3px;
-  background: var(--c-primary);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform var(--t-slow);
-}
-.feature-card:hover::after { transform: scaleX(1); }
-.feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+/* Fully static cards: no hover lift/shadow, no underline reveal,
+   no icon scale/rotate, no scroll-in entrance animation */
+.feature-card[data-reveal] { opacity: 1; transform: none; transition: none; }
 .feature-icon {
   width: 58px; height: 58px; border-radius: var(--r-lg);
   margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; transition: transform var(--t);
+  flex-shrink: 0;
 }
-.feature-card:hover .feature-icon { transform: scale(1.12) rotate(-5deg); }
 .feature-icon svg { width: 22px; height: 22px; display: block; flex-shrink: 0; }
 .feature-icon span { display: flex; align-items: center; justify-content: center; width: 22px; height: 22px; }
 .feature-card h4 { margin-bottom: 8px; font-size: .97rem; }
@@ -548,9 +541,9 @@ h4 { font-size: 1rem; }
 .cta-card p  { color: rgba(255,255,255,.82); font-size: 1.05rem; margin-bottom: 0; max-width: 520px; margin-left: auto; margin-right: auto; }
 .cta-card .btn-white {
   background: #fff; color: var(--c-primary-dark); font-weight: 700;
-  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  box-shadow: none;
 }
-.cta-card .btn-white:hover { background: var(--c-primary-pale); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,.22); }
+.cta-card .btn-white:hover { background: var(--c-primary-pale); transform: none; box-shadow: none; }
 
 /* ── 14. CATALOG ─────────────────────────────────────────────── */
 .page-title-bar {
@@ -1157,8 +1150,8 @@ h4 { font-size: 1rem; }
 }
 .about-returns-card h3 { color: #fff; font-size: 2.4rem; margin-bottom: 16px; }
 .about-returns-card p  { color: rgba(255,255,255,.8); line-height: 1.7; margin-bottom: 28px; font-size: .95rem; }
-.about-returns-btn { background: #fff; color: var(--c-primary); font-weight: 700; }
-.about-returns-btn:hover { background: var(--c-primary-pale); }
+.about-returns-btn { background: #fff; color: var(--c-primary); font-weight: 700; box-shadow: none; }
+.about-returns-btn:hover { background: var(--c-primary-pale); transform: none; box-shadow: none; }
 
 .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
 .team-card { background: #fff; border-radius: var(--r-xl); overflow: hidden; border: 1px solid var(--c-border-soft); box-shadow: var(--shadow-xs); text-align: center; transition: var(--t-slow); }
