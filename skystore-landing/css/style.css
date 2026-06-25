@@ -508,9 +508,8 @@ h4 { font-size: 1rem; }
   border: 1px solid var(--c-border-soft); box-shadow: var(--shadow-xs);
   position: relative; overflow: hidden;
 }
-/* Fully static cards: no hover lift/shadow, no underline reveal,
-   no icon scale/rotate, no scroll-in entrance animation */
-.feature-card[data-reveal] { opacity: 1; transform: none; transition: none; }
+/* No hover animation: no lift/shadow, no underline reveal, no icon
+   scale/rotate. Scroll-in entrance (data-reveal) is kept. */
 .feature-icon {
   width: 58px; height: 58px; border-radius: var(--r-lg);
   margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
