@@ -247,21 +247,6 @@ h4 { font-size: 1rem; }
   letter-spacing: -.06em; display: block;
 }
 
-/* Badge */
-.hero-badge {
-  position: relative; z-index: 1;
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: .72rem; font-weight: 700; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--c-muted);
-  margin-bottom: 32px;
-  opacity: 0; animation: fadeUp .5s .05s forwards;
-}
-.hero-badge-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--c-primary);
-  box-shadow: 0 0 0 3px rgba(14,165,233,.22); flex-shrink: 0;
-}
-
 /* Asymmetric 12-col grid: h1 takes 8 cols, side takes 4 */
 .hero-main-grid {
   position: relative; z-index: 1;
