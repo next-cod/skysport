@@ -2,6 +2,15 @@
    SkyStore – Cart & Products v2
    ============================================================ */
 
+/* ─── IMAGE HELPERS ──────────────────────────────────────────── */
+/* Product photos ship as .png with a same-named .webp next to them;
+   this points <source> at the modern format while <img> keeps the
+   .png fallback for browsers without WebP support. */
+function webpSrc(src) { return src.replace(/\.png(?=$|\?)/i, '.webp'); }
+function picture(src, imgAttrs) {
+  return `<picture><source srcset="${webpSrc(src)}" type="image/webp"><img src="${src}" ${imgAttrs}></picture>`;
+}
+
 /* ─── PRODUCT DATA ──────────────────────────────────────────── */
 const PRODUCTS = [
   /* БУТЫЛКИ – одна модель в 4 цветах */
@@ -270,7 +279,7 @@ function renderCartPage() {
   itemsEl.innerHTML = items.map(it => `
     <div class="cart-item" data-id="${it.id}">
       <div class="cart-item-image">
-        <img src="${it.product.img}" alt="${it.product.name}" loading="lazy">
+        ${picture(it.product.img, `alt="${it.product.name}" loading="lazy" decoding="async"`)}
       </div>
       <div class="cart-item-info">
         <div class="cart-item-category">${it.product.categoryLabel}</div>

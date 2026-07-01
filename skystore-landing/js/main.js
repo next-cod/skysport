@@ -301,7 +301,7 @@ function productCardHTML(p, delay = 0) {
   <div class="product-card" data-reveal="up" data-delay="${delay}">
     <div class="${imgCls}">
       ${badge}
-      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      ${picture(p.img, `alt="${p.name}" loading="lazy" decoding="async"`)}
       <button class="btn-wishlist" title="В избранное">${ICONS.heart}</button>
     </div>
     <div class="product-body">
@@ -424,13 +424,13 @@ function initProductPage() {
   if (badgeEl) { if (p.badge) { badgeEl.textContent = p.badge; badgeEl.className = `badge ${p.badgeClass}`; badgeEl.style.display = ''; } else { badgeEl.style.display = 'none'; } }
 
   const imgEl = document.getElementById('prod-image');
-  if (imgEl) { imgEl.innerHTML = `<img src="${p.img}" alt="${p.name}">`; imgEl.className = 'product-main-image'; }
+  if (imgEl) { imgEl.innerHTML = picture(p.img, `alt="${p.name}" fetchpriority="high" decoding="async"`); imgEl.className = 'product-main-image'; }
 
   const thumbsEl = document.getElementById('prod-thumbs');
   if (thumbsEl) {
     thumbsEl.innerHTML = [p.img, p.img, p.img, p.img].map((src, i) => `
       <div class="product-thumb ${i===0?'active':''}" data-i="${i}">
-        <img src="${src}" alt="${p.name} вид ${i+1}" loading="lazy">
+        ${picture(src, `alt="${p.name} вид ${i+1}" loading="lazy" decoding="async"`)}
       </div>`).join('');
     thumbsEl.querySelectorAll('.product-thumb').forEach(t => {
       t.addEventListener('click', () => { thumbsEl.querySelectorAll('.product-thumb').forEach(x=>x.classList.remove('active')); t.classList.add('active'); });
@@ -513,7 +513,7 @@ function initCheckout() {
       ? items.map(it => `
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
           <div style="width:46px;height:46px;border-radius:8px;overflow:hidden;flex-shrink:0;background:var(--c-bg)">
-            <img src="${it.product.img}" alt="${it.product.name}" style="width:100%;height:100%;object-fit:cover">
+            ${picture(it.product.img, `alt="${it.product.name}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover"`)}
           </div>
           <div style="flex:1;min-width:0">
             <div style="font-size:.84rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${it.product.name}</div>
