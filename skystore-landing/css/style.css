@@ -2046,13 +2046,16 @@ img, video { max-width: 100%; }
 /* ── 26. TEXT WRAP ────────────────────────────────────────────── */
 h1, h2, h3, .hero-h1 { text-wrap: balance; }
 
-/* ── 27. MOBILE HERO TITLE – bigger, reads like a real headline ──── */
+/* ── 27. MOBILE HERO – bigger title, drop the side copy ──────────
+   On phones the description + trust list crowded the screen under
+   the stat cards, so we cut them and let the headline carry the hero. */
 @media (max-width: 640px) {
-  .hero-h1 { font-size: clamp(2.1rem, 9.5vw, 2.9rem); line-height: 1.12; }
+  .hero-h1 { font-size: clamp(2.3rem, 10.5vw, 3.2rem); line-height: 1.1; }
+  .hero-side { display: none; }
 }
 @media (max-width: 300px) {
-  .hero-h1 { font-size: 1.8rem; }
+  .hero-h1 { font-size: 2rem; }
 }
 @media (max-width: 260px) {
-  .hero-h1 { font-size: 1.55rem; }
+  .hero-h1 { font-size: 1.75rem; }
 }
